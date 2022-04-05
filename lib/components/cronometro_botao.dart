@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class CronometroButao extends StatelessWidget {
   final String texto;
   final IconData icone;
+  final void Function()? click;
 
   const CronometroButao({
     Key? key,
     required this.texto,
     required this.icone,
+    this.click,
   }) : super(key: key);
 
   @override
@@ -15,15 +17,15 @@ class CronometroButao extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         primary: Colors.black,
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           vertical: 20,
           horizontal: 25,
         ),
-        textStyle: TextStyle(
+        textStyle: const TextStyle(
           fontSize: 25,
         ),
       ),
-      onPressed: () {},
+      onPressed: click,
       child: Row(
         children: [
           Padding(
